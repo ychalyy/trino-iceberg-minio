@@ -1,40 +1,49 @@
 services:
   trino:
-    image: ${TRINO_IMAGE:-trinodb/trino:latest}
-    container_name: trino
+    mem_limit: ${TRINO_MEMORY_LIMIT:-3g}
+    image: ${TRINO_IMAGE:-trinodb/trino:484}
     ports:
-      - "${TRINO_PORT:-8080}:8080"
+      - "127.0.0.1:${TRINO_PORT:-8080}:8080"
     networks:
       iceberg_net:
+    healthcheck:
+      test: ["CMD", "/usr/lib/trino/bin/health-check"]
+      start_period: 60s
+      interval: 10s
+      timeout: 5s
+      retries: 6
     depends_on:
-      - rest
-      - minio
+      rest:
+        condition: service_started
+      mc:
+        condition: service_healthy
     volumes:
       - ./trino/iceberg.properties:/etc/trino/catalog/iceberg.properties
+      - ./trino/jvm.config:/etc/trino/jvm.config:ro
     environment:
       - AWS_ACCESS_KEY_ID=${MINIO_ROOT_USER:-admin}
-      - AWS_SECRET_ACCESS_KEY=${MINIO_ROOT_PASSWORD:-password}
+      - AWS_SECRET_ACCESS_KEY=${MINIO_ROOT_PASSWORD:?Set MINIO_ROOT_PASSWORD in .env}
       - AWS_REGION=${AWS_REGION:-us-east-1}
       - WAREHOUSE_BUCKET=${WAREHOUSE_BUCKET:-warehouse}
 
   rest:
-    image: ${REST_IMAGE:-apache/iceberg-rest-fixture}
-    container_name: iceberg-rest
+    image: ${REST_IMAGE:-apache/iceberg-rest-fixture:1.10.1}
     user: "0:0"
     volumes:
       - rest_data:/data
     networks:
       iceberg_net:
     ports:
-      - "${REST_PORT:-8181}:8181"
+      - "127.0.0.1:${REST_PORT:-8181}:8181"
     environment:
       - AWS_ACCESS_KEY_ID=${MINIO_ROOT_USER:-admin}
-      - AWS_SECRET_ACCESS_KEY=${MINIO_ROOT_PASSWORD:-password}
+      - AWS_SECRET_ACCESS_KEY=${MINIO_ROOT_PASSWORD:?Set MINIO_ROOT_PASSWORD in .env}
       - AWS_REGION=${AWS_REGION:-us-east-1}
       - CATALOG_WAREHOUSE=s3://${WAREHOUSE_BUCKET:-warehouse}/
       - CATALOG_IO__IMPL=org.apache.iceberg.aws.s3.S3FileIO
       - CATALOG_S3_ENDPOINT=http://minio:9000
-      - CATALOG_URI=jdbc:sqlite:file:/data/iceberg_catalog.db
+      - CATALOG_S3_PATH__STYLE__ACCESS=true
+      - CATALOG_URI=jdbc:sqlite:file:/data/iceberg_catalog.db?busy_timeout=15000
 
   minio:
     build:
@@ -42,18 +51,17 @@ services:
       args:
         MINIO_TAG: ${MINIO_TAG:-RELEASE.2025-04-22T22-12-26Z}
     image: local/minio:${MINIO_TAG:-RELEASE.2025-04-22T22-12-26Z}
-    container_name: minio
     environment:
       - MINIO_ROOT_USER=${MINIO_ROOT_USER:-admin}
-      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD:-password}
+      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD:?Set MINIO_ROOT_PASSWORD in .env}
       - MINIO_DOMAIN=minio
     networks:
       iceberg_net:
         aliases:
           - ${WAREHOUSE_BUCKET:-warehouse}.minio
     ports:
-      - "${MINIO_CONSOLE_PORT:-9001}:9001"
-      - "${MINIO_API_PORT:-9000}:9000"
+      - "127.0.0.1:${MINIO_CONSOLE_PORT:-9001}:9001"
+      - "127.0.0.1:${MINIO_API_PORT:-9000}:9000"
     command: ["server", "/data", "--console-address", ":9001"]
     volumes:
       - minio_data:/data
@@ -65,23 +73,62 @@ services:
       args:
         MC_TAG: ${MC_TAG:-RELEASE.2025-04-16T18-13-26Z}
     image: local/mc:${MC_TAG:-RELEASE.2025-04-16T18-13-26Z}
-    container_name: mc
     depends_on:
       - minio
     networks:
       iceberg_net:
     environment:
       - MINIO_ROOT_USER=${MINIO_ROOT_USER:-admin}
-      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD:-password}
+      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD:?Set MINIO_ROOT_PASSWORD in .env}
       - WAREHOUSE_BUCKET=${WAREHOUSE_BUCKET:-warehouse}
-    entrypoint: |
-      /bin/sh -c "
-      until (/usr/bin/mc alias set minio http://minio:9000 $${MINIO_ROOT_USER} $${MINIO_ROOT_PASSWORD}); do echo '...waiting...' && sleep 1; done;
+    entrypoint:
+      - /bin/sh
+      - -ec
+      - |
+        rm -f /tmp/warehouse-ready
+        for attempt in $$(seq 1 30); do
+          if /usr/bin/mc alias set minio http://minio:9000 "$${MINIO_ROOT_USER}" "$${MINIO_ROOT_PASSWORD}" &&
+             /usr/bin/mc mb --ignore-existing "minio/$${WAREHOUSE_BUCKET}" &&
+             /usr/bin/mc anonymous set none "minio/$${WAREHOUSE_BUCKET}"; then
+            touch /tmp/warehouse-ready
+            exec tail -f /dev/null
+          fi
+          sleep 2
+        done
+        echo "MinIO bucket initialization timed out" >&2
+        exit 1
+    healthcheck:
+      test: ["CMD-SHELL", "test -f /tmp/warehouse-ready && /usr/bin/mc ls \"minio/$$WAREHOUSE_BUCKET\" >/dev/null"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
 
-      /usr/bin/mc mb --ignore-existing minio/$${WAREHOUSE_BUCKET};
-      /usr/bin/mc anonymous set public minio/$${WAREHOUSE_BUCKET};
-      tail -f /dev/null
-      "
+  superset:
+    profiles: ["bi"]
+    build: ./superset
+    image: local/lakehouse-superset:6.1.0
+    depends_on:
+      trino:
+        condition: service_healthy
+    entrypoint: ["/bin/sh", "/app/lakehouse/start.sh"]
+    ports:
+      - "127.0.0.1:${SUPERSET_PORT:-8088}:8088"
+    networks:
+      iceberg_net:
+    environment:
+      SUPERSET_CONFIG_PATH: /app/lakehouse/superset_config.py
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY:-}
+      SUPERSET_ADMIN_PASSWORD: ${SUPERSET_ADMIN_PASSWORD:-}
+    volumes:
+      - ./superset/start.sh:/app/lakehouse/start.sh:ro
+      - ./superset/superset_config.py:/app/lakehouse/superset_config.py:ro
+      - superset_data:/app/superset_home
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8088/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+      start_period: 25s
 
 networks:
   iceberg_net:
@@ -89,3 +136,4 @@ networks:
 volumes:
   minio_data:
   rest_data:
+  superset_data:

@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="architecture" name="Архитектура Lakehouse">
+    <mxGraphModel page="1" pageScale="1" grid="1" pageWidth="1290" pageHeight="650" background="#FFFFFF" connect="1" arrows="1" fold="1" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Архитектура Lakehouse" style="text;html=0;align=left;verticalAlign=middle;fontSize=28;fontColor=#19304D;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="36" y="24" width="1218" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Компоненты Docker Compose и потоки одного пакета TPC-H" style="text;html=0;align=left;verticalAlign=middle;fontSize=14;fontColor=#19304D;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="36" y="65" width="1218" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="source" value="&lt;b&gt;TPC-H&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 12px'&gt;Каталог tpch.tiny · SF 0.01&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#19304D;strokeWidth=1.5;fillColor=#E8EFFA;strokeColor=#5777A6;" vertex="1" parent="1">
+          <mxGeometry x="44" y="137" width="195" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="orchestrator" value="&lt;b&gt;Make / Python&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 12px'&gt;Порядок шагов · контроль повторов&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#19304D;strokeWidth=1.5;fillColor=#F2F5F8;strokeColor=#8294A7;" vertex="1" parent="1">
+          <mxGeometry x="44" y="258" width="195" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="trino" value="&lt;b&gt;Trino 484&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 12px'&gt;SQL · метаданные · вычисления&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#19304D;strokeWidth=1.5;fillColor=#E8EFFA;strokeColor=#5777A6;" vertex="1" parent="1">
+          <mxGeometry x="331" y="183" width="216" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="rest" value="&lt;b&gt;Iceberg REST Catalog&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 12px'&gt;SQLite · указатели на метаданные&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#19304D;strokeWidth=1.5;fillColor=#F3EDFA;strokeColor=#8A69A6;" vertex="1" parent="1">
+          <mxGeometry x="630" y="129" width="230" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="minio" value="&lt;b&gt;MinIO / warehouse&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 12px'&gt;Parquet · метаданные Iceberg&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#19304D;strokeWidth=1.5;fillColor=#FFF2DB;strokeColor=#B4863E;" vertex="1" parent="1">
+          <mxGeometry x="954" y="129" width="245" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="raw" value="&lt;b&gt;Iceberg Raw&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 12px'&gt;Типизированные записи по пакетам&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#19304D;strokeWidth=1.5;fillColor=#E5F5EF;strokeColor=#4B8C76;" vertex="1" parent="1">
+          <mxGeometry x="317" y="347" width="224" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="vault" value="&lt;b&gt;Data Vault 2.0&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 12px'&gt;Hubs · Links · Satellites&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#19304D;strokeWidth=1.5;fillColor=#E5F5EF;strokeColor=#4B8C76;" vertex="1" parent="1">
+          <mxGeometry x="611" y="347" width="224" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="mart" value="&lt;b&gt;Iceberg Mart&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 12px'&gt;Снимки по пакету · две витрины&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#19304D;strokeWidth=1.5;fillColor=#E5F5EF;strokeColor=#4B8C76;" vertex="1" parent="1">
+          <mxGeometry x="947" y="347" width="248" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="dq" value="&lt;b&gt;Iceberg Ops&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 12px'&gt;Пакеты · попытки · результаты DQ&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#19304D;strokeWidth=1.5;fillColor=#F3EDFA;strokeColor=#8A69A6;" vertex="1" parent="1">
+          <mxGeometry x="610" y="504" width="226" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="superset" value="&lt;b&gt;Superset&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 12px'&gt;Качество данных · Бизнес-аналитика&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#19304D;strokeWidth=1.5;fillColor=#E8EFFA;strokeColor=#5777A6;" vertex="1" parent="1">
+          <mxGeometry x="947" y="504" width="248" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="edge14" value="SQL-источник" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;" edge="1" parent="1" source="source" target="trino">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge15" value="команды загрузки" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;" edge="1" parent="1" source="orchestrator" target="trino">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge16" value="REST API" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;" edge="1" parent="1" source="trino" target="rest">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge17" value="S3-метаданные" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;" edge="1" parent="1" source="rest" target="minio">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge18" value="SQL" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;" edge="1" parent="1" source="trino" target="raw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge19" value="MERGE" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;" edge="1" parent="1" source="raw" target="vault">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge20" value="расчёт" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;" edge="1" parent="1" source="vault" target="mart">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge21" value="проверки" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;" edge="1" parent="1" source="vault" target="dq">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge22" value="бизнес-метрики" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;" edge="1" parent="1" source="mart" target="superset">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge23" value="факты DQ" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;" edge="1" parent="1" source="dq" target="superset">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge24" value="граница COMPLETE" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;exitX=1;exitY=0.18;entryX=0.15;entryY=1;" edge="1" parent="1" source="dq" target="mart">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="515" />
+              <mxPoint x="900" y="454" />
+              <mxPoint x="980" y="454" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge25" value="S3 чтение / запись" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;endArrow=block;endFill=1;dashed=1;" edge="1" parent="1" source="trino" target="minio">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="770" y="247" />
+              <mxPoint x="1090" y="247" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
