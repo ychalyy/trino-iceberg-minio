@@ -1,66 +1,108 @@
 <?xml version='1.0' encoding='utf-8'?>
 <mxfile host="app.diagrams.net" type="device">
   <diagram id="tpch-erd" name="ERD источника TPC-H">
-    <mxGraphModel page="1" pageScale="1" grid="1" pageWidth="1290" pageHeight="755" background="#FFFFFF" connect="1" arrows="1" fold="1" math="0" shadow="0">
+    <mxGraphModel page="1" pageScale="1" grid="1" pageWidth="1220" pageHeight="755" background="#FFFFFF" connect="1" arrows="1" fold="1" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="title" value="ERD источника TPC-H" style="text;html=0;align=left;verticalAlign=middle;fontSize=28;fontColor=#19304D;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="36" y="24" width="1218" height="38" as="geometry" />
+          <mxGeometry x="50" y="23" width="1120" height="38" as="geometry" />
         </mxCell>
-        <mxCell id="subtitle" value="Восемь сущностей. PK — ключ строки, FK — ссылка на ключ родителя." style="text;html=0;align=left;verticalAlign=middle;fontSize=14;fontColor=#19304D;fontStyle=0;" vertex="1" parent="1">
-          <mxGeometry x="36" y="65" width="1218" height="24" as="geometry" />
+        <mxCell id="subtitle" value="8 исходных таблиц · tpch.tiny · SF 0.01" style="text;html=0;align=left;verticalAlign=middle;fontSize=14;fontColor=#19304D;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="65" width="1120" height="25" as="geometry" />
         </mxCell>
-        <mxCell id="region" value="&lt;b&gt;REGION&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 12px'&gt;PK regionkey&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#19304D;strokeWidth=1.5;fillColor=#E5F5EF;strokeColor=#4B8C76;" vertex="1" parent="1">
-          <mxGeometry x="42" y="230" width="196" height="92" as="geometry" />
+        <mxCell id="region" value="&lt;b&gt;REGION&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 14px'&gt;PK regionkey&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=17;fontColor=#19304D;strokeWidth=1.5;fillColor=#E5F5EF;strokeColor=#4B8C76;fontFamily=Arial;" vertex="1" parent="1">
+          <mxGeometry x="50" y="132" width="225" height="103" as="geometry" />
         </mxCell>
-        <mxCell id="nation" value="&lt;b&gt;NATION&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 12px'&gt;PK nationkey&lt;br&gt;FK regionkey&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#19304D;strokeWidth=1.5;fillColor=#E5F5EF;strokeColor=#4B8C76;" vertex="1" parent="1">
-          <mxGeometry x="273" y="230" width="196" height="92" as="geometry" />
+        <mxCell id="nation" value="&lt;b&gt;NATION&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 14px'&gt;PK nationkey&lt;br&gt;FK regionkey&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=17;fontColor=#19304D;strokeWidth=1.5;fillColor=#E5F5EF;strokeColor=#4B8C76;fontFamily=Arial;" vertex="1" parent="1">
+          <mxGeometry x="349" y="132" width="225" height="103" as="geometry" />
         </mxCell>
-        <mxCell id="customer" value="&lt;b&gt;CUSTOMER&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 12px'&gt;PK custkey&lt;br&gt;FK nationkey&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#19304D;strokeWidth=1.5;fillColor=#E8EFFA;strokeColor=#5777A6;" vertex="1" parent="1">
-          <mxGeometry x="506" y="118" width="196" height="92" as="geometry" />
+        <mxCell id="customer" value="&lt;b&gt;CUSTOMER&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 14px'&gt;PK custkey&lt;br&gt;FK nationkey&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=17;fontColor=#19304D;strokeWidth=1.5;fillColor=#E8EFFA;strokeColor=#5777A6;fontFamily=Arial;" vertex="1" parent="1">
+          <mxGeometry x="648" y="132" width="225" height="103" as="geometry" />
         </mxCell>
-        <mxCell id="supplier" value="&lt;b&gt;SUPPLIER&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 12px'&gt;PK suppkey&lt;br&gt;FK nationkey&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#19304D;strokeWidth=1.5;fillColor=#E8EFFA;strokeColor=#5777A6;" vertex="1" parent="1">
-          <mxGeometry x="506" y="350" width="196" height="92" as="geometry" />
+        <mxCell id="supplier" value="&lt;b&gt;SUPPLIER&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 14px'&gt;PK suppkey&lt;br&gt;FK nationkey&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=17;fontColor=#19304D;strokeWidth=1.5;fillColor=#E8EFFA;strokeColor=#5777A6;fontFamily=Arial;" vertex="1" parent="1">
+          <mxGeometry x="349" y="300" width="225" height="103" as="geometry" />
         </mxCell>
-        <mxCell id="orders" value="&lt;b&gt;ORDERS&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 12px'&gt;PK orderkey&lt;br&gt;FK custkey&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#19304D;strokeWidth=1.5;fillColor=#FFF2DB;strokeColor=#B4863E;" vertex="1" parent="1">
-          <mxGeometry x="736" y="118" width="196" height="92" as="geometry" />
+        <mxCell id="orders" value="&lt;b&gt;ORDERS&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 14px'&gt;PK orderkey&lt;br&gt;FK custkey&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=17;fontColor=#19304D;strokeWidth=1.5;fillColor=#FFF2DB;strokeColor=#B4863E;fontFamily=Arial;" vertex="1" parent="1">
+          <mxGeometry x="947" y="132" width="225" height="103" as="geometry" />
         </mxCell>
-        <mxCell id="part" value="&lt;b&gt;PART&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 12px'&gt;PK partkey&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#19304D;strokeWidth=1.5;fillColor=#E8EFFA;strokeColor=#5777A6;" vertex="1" parent="1">
-          <mxGeometry x="506" y="544" width="196" height="92" as="geometry" />
+        <mxCell id="part" value="&lt;b&gt;PART&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 14px'&gt;PK partkey&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=17;fontColor=#19304D;strokeWidth=1.5;fillColor=#E8EFFA;strokeColor=#5777A6;fontFamily=Arial;" vertex="1" parent="1">
+          <mxGeometry x="648" y="468" width="225" height="103" as="geometry" />
         </mxCell>
-        <mxCell id="partsupp" value="&lt;b&gt;PARTSUPP&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 12px'&gt;PK, FK partkey + suppkey&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#19304D;strokeWidth=1.5;fillColor=#F3EDFA;strokeColor=#8A69A6;" vertex="1" parent="1">
-          <mxGeometry x="736" y="442" width="196" height="92" as="geometry" />
+        <mxCell id="partsupp" value="&lt;b&gt;PARTSUPP&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 14px'&gt;PK (partkey, suppkey)&lt;br&gt;FK partkey · FK suppkey&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=17;fontColor=#19304D;strokeWidth=1.5;fillColor=#F3EDFA;strokeColor=#8A69A6;fontFamily=Arial;" vertex="1" parent="1">
+          <mxGeometry x="648" y="300" width="225" height="103" as="geometry" />
         </mxCell>
-        <mxCell id="lineitem" value="&lt;b&gt;LINEITEM&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 12px'&gt;PK orderkey + linenumber&lt;br&gt;FK orderkey&lt;br&gt;FK (partkey, suppkey)&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#19304D;strokeWidth=1.5;fillColor=#FFF2DB;strokeColor=#B4863E;" vertex="1" parent="1">
-          <mxGeometry x="992" y="252" width="196" height="92" as="geometry" />
+        <mxCell id="lineitem" value="&lt;b&gt;LINEITEM&lt;/b&gt;&lt;br&gt;&lt;span style='font-size: 14px'&gt;PK (orderkey, linenumber)&lt;br&gt;FK orderkey&lt;br&gt;FK (partkey, suppkey)&lt;/span&gt;" style="rounded=1;arcSize=13;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=17;fontColor=#19304D;strokeWidth=1.5;fillColor=#FFF2DB;strokeColor=#B4863E;fontFamily=Arial;" vertex="1" parent="1">
+          <mxGeometry x="947" y="300" width="225" height="103" as="geometry" />
         </mxCell>
-        <mxCell id="edge12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="region" target="nation">
+        <mxCell id="edge12" value="" style="noEdgeStyle=1;strokeColor=#688199;strokeWidth=1.5;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;startSize=10;endSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="region" target="nation">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="edge13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="nation" target="customer">
+        <mxCell id="edge13" value="" style="noEdgeStyle=1;strokeColor=#688199;strokeWidth=1.5;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;startSize=10;endSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="nation" target="customer">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="edge14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="nation" target="supplier">
+        <mxCell id="edge14" value="" style="noEdgeStyle=1;strokeColor=#688199;strokeWidth=1.5;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;startSize=10;endSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="nation" target="supplier">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="edge15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="customer" target="orders">
+        <mxCell id="edge15" value="" style="noEdgeStyle=1;strokeColor=#688199;strokeWidth=1.5;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;startSize=10;endSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="customer" target="orders">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="edge16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="orders" target="lineitem">
+        <mxCell id="edge16" value="" style="noEdgeStyle=1;strokeColor=#688199;strokeWidth=1.5;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;startSize=10;endSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="orders" target="lineitem">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="edge17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="part" target="partsupp">
+        <mxCell id="edge17" value="" style="noEdgeStyle=1;strokeColor=#688199;strokeWidth=1.5;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;startSize=10;endSize=10;exitX=0.5;exitY=0;entryX=0.5;entryY=1;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="part" target="partsupp">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="edge18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="supplier" target="partsupp">
+        <mxCell id="edge18" value="" style="noEdgeStyle=1;strokeColor=#688199;strokeWidth=1.5;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;startSize=10;endSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="supplier" target="partsupp">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="edge19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#688199;strokeWidth=1.4;fontSize=11;fontColor=#344D63;labelBackgroundColor=#FFFFFF;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="partsupp" target="lineitem">
+        <mxCell id="edge19" value="" style="noEdgeStyle=1;strokeColor=#688199;strokeWidth=1.5;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;startSize=10;endSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="partsupp" target="lineitem">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="legend" value="Вся спецификация полей и правила преобразования находятся в словаре данных ТРП." style="text;html=0;align=left;verticalAlign=middle;fontSize=13;fontColor=#19304D;fontStyle=0;" vertex="1" parent="1">
-          <mxGeometry x="42" y="681" width="1180" height="25" as="geometry" />
+        <mxCell id="legend-panel" value="" style="rounded=1;arcSize=9;fillColor=#FFFFFF;strokeColor=#D6E0EA;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="50" y="604" width="1122" height="127" />
+        </mxCell>
+        <mxCell id="legend-title" value="Легенда" style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=15;fontColor=#19304D;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="67" y="611" width="200" height="25" />
+        </mxCell>
+        <mxCell id="legend-swatch-geo" value="" style="rounded=1;arcSize=12;fillColor=#E5F5EF;strokeColor=#4B8C76;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="68" y="648" width="21" height="16" />
+        </mxCell>
+        <mxCell id="legend-label-geo" value="География" style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=15;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="98" y="640" width="270" height="32" />
+        </mxCell>
+        <mxCell id="legend-swatch-entities" value="" style="rounded=1;arcSize=12;fillColor=#E8EFFA;strokeColor=#5777A6;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="252" y="648" width="21" height="16" />
+        </mxCell>
+        <mxCell id="legend-label-entities" value="Клиенты, поставщики, товары" style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=15;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="282" y="640" width="270" height="32" />
+        </mxCell>
+        <mxCell id="legend-swatch-orders" value="" style="rounded=1;arcSize=12;fillColor=#FFF2DB;strokeColor=#B4863E;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="560" y="648" width="21" height="16" />
+        </mxCell>
+        <mxCell id="legend-label-orders" value="Заказы и позиции" style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=15;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="590" y="640" width="270" height="32" />
+        </mxCell>
+        <mxCell id="legend-swatch-pairs" value="" style="rounded=1;arcSize=12;fillColor=#F3EDFA;strokeColor=#8A69A6;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="814" y="648" width="21" height="16" />
+        </mxCell>
+        <mxCell id="legend-label-pairs" value="Пары товар–поставщик" style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=15;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="844" y="640" width="270" height="32" />
+        </mxCell>
+        <mxCell id="legend-relation" edge="1" parent="1" style="noEdgeStyle=1;strokeColor=#688199;strokeWidth=1.5;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;startSize=10;endSize=10;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="69" y="687" as="sourcePoint" />
+            <mxPoint x="135" y="687" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend-cardinality" value="1:N · черта обозначает «один», вилка — «многие»" style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=15;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="151" y="674" width="515" height="25" />
+        </mxCell>
+        <mxCell id="legend-keys" value="PK — первичный ключ · FK — логическая ссылка" style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=15;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="670" y="674" width="471" height="25" />
+        </mxCell>
+        <mxCell id="legend-composite" value="В LINEITEM составной FK (partkey, suppkey) указывает на одну строку PARTSUPP." style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;spacing=0;fontFamily=Arial;fontSize=15;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="68" y="699" width="1071" height="24" />
         </mxCell>
       </root>
     </mxGraphModel>

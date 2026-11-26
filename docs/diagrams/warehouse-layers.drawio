@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="warehouse-layers" name="Слои хранилища Lakehouse">
+    <mxGraphModel page="1" pageScale="1" grid="1" pageWidth="1210" pageHeight="520" background="#FFFFFF" connect="1" arrows="1" fold="1" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Слои хранилища Lakehouse" style="text;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacing=0;fontFamily=Arial;fontColor=#19304D;fontSize=26;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="24" y="13" width="1120" height="39" as="geometry" />
+        </mxCell>
+        <mxCell id="iceberg-container" value="" style="rounded=1;arcSize=9;fillColor=#F8FAFC;strokeColor=#D4DEE8;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="174" y="69" width="775" height="332" as="geometry" />
+        </mxCell>
+        <mxCell id="iceberg-catalog" value="Каталог iceberg" style="text;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacing=0;fontFamily=Arial;fontColor=#19304D;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="195" y="79" width="750" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="bi-container" value="" style="rounded=1;arcSize=9;fillColor=#F4F7FD;strokeColor=#BDCEE8;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="981" y="69" width="205" height="332" as="geometry" />
+        </mxCell>
+        <mxCell id="bi-title" value="Apache Superset" style="text;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacing=0;fontFamily=Arial;fontColor=#19304D;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="999" y="79" width="169" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="ops-container" value="" style="rounded=1;arcSize=9;fillColor=#FAF7FC;strokeColor=#D0BCD8;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="192" y="248" width="739" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="ops-heading" value="ops · Контроль пакетов и качества" style="text;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacing=0;fontFamily=Arial;fontColor=#19304D;fontSize=17;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="205" y="258" width="450" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="source" value="&lt;b&gt;TPC-H&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size: 15px&quot;&gt;tpch.tiny&lt;br&gt;SF 0.01&lt;br&gt;8 таблиц&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.5;fillColor=#FFF2DB;strokeColor=#B4863E;" vertex="1" parent="1">
+          <mxGeometry x="24" y="122" width="128" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="stage" value="&lt;b&gt;stage&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size: 15px&quot;&gt;Типизация входа&lt;br&gt;initial и delta&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.5;fillColor=#E5F5EF;strokeColor=#4B8C76;" vertex="1" parent="1">
+          <mxGeometry x="193" y="122" width="150" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="raw" value="&lt;b&gt;raw&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size: 15px&quot;&gt;8 таблиц&lt;br&gt;Строки по пакетам&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.5;fillColor=#E5F5EF;strokeColor=#4B8C76;" vertex="1" parent="1">
+          <mxGeometry x="379" y="122" width="145" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="vault" value="&lt;b&gt;vault&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size: 15px&quot;&gt;Data Vault 2.0&lt;br&gt;Ключи, связи, версии&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.5;fillColor=#E5F5EF;strokeColor=#4B8C76;" vertex="1" parent="1">
+          <mxGeometry x="560" y="122" width="150" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="mart" value="&lt;b&gt;mart&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size: 15px&quot;&gt;Продажи и отгрузки&lt;br&gt;Снимки и представления&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.5;fillColor=#E5F5EF;strokeColor=#4B8C76;" vertex="1" parent="1">
+          <mxGeometry x="746" y="122" width="185" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="bi-business" value="&lt;b&gt;Бизнес-аналитика&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size: 15px&quot;&gt;Продажи и отгрузки&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=17;strokeWidth=1.5;fillColor=#E8EFFA;strokeColor=#5777A6;" vertex="1" parent="1">
+          <mxGeometry x="999" y="122" width="169" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="bi-dq" value="&lt;b&gt;Качество данных&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size: 15px&quot;&gt;Результаты&lt;br&gt;проверок DQ&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=17;strokeWidth=1.5;fillColor=#E8EFFA;strokeColor=#5777A6;" vertex="1" parent="1">
+          <mxGeometry x="999" y="308" width="169" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="dq-phase-in" value="Входной DQ до Raw" style="text;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacing=0;fontFamily=Arial;fontColor=#19304D;fontSize=15;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="205" y="312" width="224" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="dq-phase-model" value="Модельный DQ до публикации" style="text;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacing=0;fontFamily=Arial;fontColor=#19304D;fontSize=15;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="205" y="339" width="225" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="ops-batches" value="&lt;b&gt;ops.batches&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size: 15px&quot;&gt;Статусы пакетов&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=16;strokeWidth=1.5;fillColor=#F3EDFA;strokeColor=#8A69A6;" vertex="1" parent="1">
+          <mxGeometry x="756" y="258" width="165" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="ops-dq-results" value="&lt;b&gt;ops.dq_results&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size: 15px&quot;&gt;Факты проверок, включая ошибки&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=16;strokeWidth=1.5;fillColor=#F3EDFA;strokeColor=#8A69A6;" vertex="1" parent="1">
+          <mxGeometry x="443" y="324" width="478" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="complete-label" value="Выбор пакета COMPLETE" style="text;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacing=0;fontFamily=Arial;fontColor=#19304D;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="647" y="219" width="187" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-source-stage" edge="1" parent="1" style="noEdgeStyle=1;strokeColor=#607991;strokeWidth=1.8;endArrow=block;endFill=1;endSize=7;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" source="source" target="stage">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-stage-raw" edge="1" parent="1" style="noEdgeStyle=1;strokeColor=#607991;strokeWidth=1.8;endArrow=block;endFill=1;endSize=7;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" source="stage" target="raw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-raw-vault" edge="1" parent="1" style="noEdgeStyle=1;strokeColor=#607991;strokeWidth=1.8;endArrow=block;endFill=1;endSize=7;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" source="raw" target="vault">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-vault-mart" edge="1" parent="1" style="noEdgeStyle=1;strokeColor=#607991;strokeWidth=1.8;endArrow=block;endFill=1;endSize=7;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" source="vault" target="mart">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-mart-bi-business" edge="1" parent="1" style="noEdgeStyle=1;strokeColor=#607991;strokeWidth=1.8;endArrow=block;endFill=1;endSize=7;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" source="mart" target="bi-business">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-ops-dq-results-bi-dq" edge="1" parent="1" style="noEdgeStyle=1;strokeColor=#607991;strokeWidth=1.8;endArrow=block;endFill=1;endSize=7;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" source="ops-dq-results" target="bi-dq">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="publication" edge="1" parent="1" style="noEdgeStyle=1;strokeColor=#8A69A6;strokeWidth=1.8;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=0;exitPerimeter=0;entryX=0.5;entryY=1;entryPerimeter=0;dashed=1;dashPattern=4 3;" source="ops-batches" target="mart">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-background" value="" style="rounded=1;arcSize=9;fillColor=#FFFFFF;strokeColor=#D4DEE8;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="24" y="422" width="1162" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="Легенда" style="text;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacing=0;fontFamily=Arial;fontColor=#19304D;fontSize=17;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="435" width="110" height="37" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-interface" value="" style="rounded=1;arcSize=9;fillColor=#FFF2DB;strokeColor=#B4863E;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="151" y="447" width="21" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-label-interface" value="Источник" style="text;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacing=0;fontFamily=Arial;fontColor=#19304D;fontSize=15;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="181" y="438" width="95" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-bi" value="" style="rounded=1;arcSize=9;fillColor=#E8EFFA;strokeColor=#5777A6;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="281" y="447" width="21" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-label-bi" value="BI" style="text;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacing=0;fontFamily=Arial;fontColor=#19304D;fontSize=15;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="311" y="438" width="56" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-data" value="" style="rounded=1;arcSize=9;fillColor=#E5F5EF;strokeColor=#4B8C76;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="373" y="447" width="21" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-label-data" value="Слои данных" style="text;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacing=0;fontFamily=Arial;fontColor=#19304D;fontSize=15;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="403" y="438" width="132" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-ops" value="" style="rounded=1;arcSize=9;fillColor=#F3EDFA;strokeColor=#8A69A6;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="548" y="447" width="21" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-label-ops" value="Статусы и DQ" style="text;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacing=0;fontFamily=Arial;fontColor=#19304D;fontSize=15;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="578" y="438" width="135" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-data-arrow" edge="1" parent="1" style="noEdgeStyle=1;strokeColor=#607991;strokeWidth=1.8;endArrow=block;endFill=1;endSize=7;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="722" y="455" as="sourcePoint" />
+            <mxPoint x="763" y="455" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend-data-arrow-label" value="Поток данных" style="text;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacing=0;fontFamily=Arial;fontColor=#19304D;fontSize=15;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="775" y="438" width="128" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-control-arrow" edge="1" parent="1" style="noEdgeStyle=1;strokeColor=#8A69A6;strokeWidth=1.8;endArrow=block;endFill=1;endSize=7;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;dashed=1;dashPattern=4 3;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="907" y="455" as="sourcePoint" />
+            <mxPoint x="951" y="455" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend-control-arrow-label" value="Зависимость по статусу" style="text;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacing=0;fontFamily=Arial;fontColor=#19304D;fontSize=15;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="963" y="438" width="207" height="32" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

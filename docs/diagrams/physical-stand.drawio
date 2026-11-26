@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="physical-stand" name="Физический стенд Lakehouse">
+    <mxGraphModel page="1" pageScale="1" grid="1" pageWidth="1480" pageHeight="805" background="#FFFFFF" connect="1" arrows="1" fold="1" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Физический стенд Lakehouse" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=27;fontStyle=1;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="34" y="19" width="1412" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="host-panel" value="" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.4;fillColor=#F8FAFC;strokeColor=#D4DEE8;" vertex="1" parent="1">
+          <mxGeometry x="34" y="77" width="1412" height="129" as="geometry" />
+        </mxCell>
+        <mxCell id="host-title" value="Хост Mac · опубликованные порты по умолчанию" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=17;fontStyle=1;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="55" y="86" width="1350" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="host-trino" value="&lt;b&gt;Trino · UI и SQL&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;127.0.0.1:8080&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=16;strokeWidth=1.4;fillColor=#FFFFFF;strokeColor=#D4DEE8;" vertex="1" parent="1">
+          <mxGeometry x="55" y="122" width="258" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="host-rest" value="&lt;b&gt;Iceberg REST · API&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;127.0.0.1:8181&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=16;strokeWidth=1.4;fillColor=#FFFFFF;strokeColor=#D4DEE8;" vertex="1" parent="1">
+          <mxGeometry x="333" y="122" width="258" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="host-minio" value="&lt;b&gt;MinIO · S3 и консоль&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;127.0.0.1:9000 / 9001&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=16;strokeWidth=1.4;fillColor=#FFFFFF;strokeColor=#D4DEE8;" vertex="1" parent="1">
+          <mxGeometry x="611" y="122" width="258" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="host-bi" value="&lt;b&gt;Superset · UI&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;127.0.0.1:8088 · профиль bi&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=16;strokeWidth=1.4;fillColor=#FFFFFF;strokeColor=#D4DEE8;" vertex="1" parent="1">
+          <mxGeometry x="889" y="122" width="258" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="host-make" value="&lt;b&gt;Make и Python&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;docker compose exec → Trino CLI&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=16;strokeWidth=1.4;fillColor=#FFFFFF;strokeColor=#D4DEE8;" vertex="1" parent="1">
+          <mxGeometry x="1167" y="122" width="258" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="compose-panel" value="" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.4;fillColor=#F8FAFC;strokeColor=#D4DEE8;" vertex="1" parent="1">
+          <mxGeometry x="34" y="227" width="1412" height="461" as="geometry" />
+        </mxCell>
+        <mxCell id="compose-title" value="Docker Compose" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=20;fontStyle=1;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="55" y="240" width="230" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="compose-network" value="Внутренняя сеть iceberg_net · адреса по именам сервисов" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="55" y="272" width="555" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="trino" value="&lt;b&gt;Trino 484&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;trino:8080&lt;br&gt;SQL · каталоги tpch и iceberg&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.4;fillColor=#E8EFFA;strokeColor=#5777A6;" vertex="1" parent="1">
+          <mxGeometry x="365" y="423" width="235" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="rest" value="&lt;b&gt;Iceberg REST Catalog&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;rest:8181 · Fixture 1.10.1&lt;br&gt;Указатели на метаданные&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.4;fillColor=#E8EFFA;strokeColor=#5777A6;" vertex="1" parent="1">
+          <mxGeometry x="638" y="290" width="232" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="minio" value="&lt;b&gt;MinIO&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;minio:9000 · S3 API&lt;br&gt;minio:9001 · консоль&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.4;fillColor=#FFF2DB;strokeColor=#B4863E;" vertex="1" parent="1">
+          <mxGeometry x="962" y="423" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mc" value="&lt;b&gt;mc&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;Подготовка&lt;br&gt;бакета&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.4;fillColor=#FFF2DB;strokeColor=#B4863E;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="423" width="151" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="superset" value="&lt;b&gt;Superset 6.1.0&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;superset:8088&lt;br&gt;Профиль bi&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.4;fillColor=#F3EDFA;strokeColor=#8A69A6;" vertex="1" parent="1">
+          <mxGeometry x="55" y="423" width="235" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="rest-volume" value="&lt;b&gt;rest_data&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;SQLite каталога&lt;br&gt;iceberg_catalog.db&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.4;fillColor=#E5F5EF;strokeColor=#4B8C76;" vertex="1" parent="1">
+          <mxGeometry x="962" y="290" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-volume" value="&lt;b&gt;minio_data&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;Приватный бакет warehouse&lt;br&gt;Parquet и метаданные Iceberg&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.4;fillColor=#E5F5EF;strokeColor=#4B8C76;" vertex="1" parent="1">
+          <mxGeometry x="962" y="574" width="250" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="bi-volume" value="&lt;b&gt;superset_data&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;SQLite Superset&lt;br&gt;Метаданные BI&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.4;fillColor=#E5F5EF;strokeColor=#4B8C76;" vertex="1" parent="1">
+          <mxGeometry x="55" y="574" width="235" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="bi-sql" edge="1" parent="1" style="noEdgeStyle=1;rounded=0;strokeColor=#5A738D;strokeWidth=1.8;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" source="superset" target="trino">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bi-sql-text" value="SQL" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="291" y="440" width="73" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="trino-rest" edge="1" parent="1" style="noEdgeStyle=1;rounded=0;strokeColor=#5A738D;strokeWidth=1.8;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=0;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" source="trino" target="rest">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="482.5" y="335" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="trino-rest-text" value="REST API" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="495" y="301" width="122" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="rest-s3" edge="1" parent="1" style="noEdgeStyle=1;rounded=0;strokeColor=#5A738D;strokeWidth=1.8;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" source="rest" target="minio">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="754" y="402" />
+              <mxPoint x="1087" y="402" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rest-s3-text" value="S3 · метаданные" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="782" y="378" width="233" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="trino-s3" edge="1" parent="1" style="noEdgeStyle=1;rounded=0;strokeColor=#5A738D;strokeWidth=1.8;endArrow=block;endFill=1;endSize=8;startArrow=block;startFill=1;startSize=8;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" source="trino" target="minio">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="trino-s3-text" value="S3 · чтение и запись файлов Iceberg" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="612" y="437" width="338" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="mc-s3" edge="1" parent="1" style="noEdgeStyle=1;rounded=0;strokeColor=#5A738D;strokeWidth=1.8;endArrow=block;endFill=1;endSize=8;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" source="mc" target="minio">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mc-s3-text" value="S3" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="1216" y="440" width="50" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="rest-mount" edge="1" parent="1" style="noEdgeStyle=1;rounded=0;strokeColor=#4B8C76;strokeWidth=1.8;dashed=1;dashPattern=4 3;endArrow=none;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" source="rest" target="rest-volume">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rest-mount-text" value="/data" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="877" y="306" width="78" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-mount" edge="1" parent="1" style="noEdgeStyle=1;rounded=0;strokeColor=#4B8C76;strokeWidth=1.8;dashed=1;dashPattern=4 3;endArrow=none;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" source="minio" target="s3-volume">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-mount-text" value="/data" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="1102" y="529" width="75" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="bi-mount" edge="1" parent="1" style="noEdgeStyle=1;rounded=0;strokeColor=#4B8C76;strokeWidth=1.8;dashed=1;dashPattern=4 3;endArrow=none;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" source="superset" target="bi-volume">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bi-mount-text" value="/app/superset_home" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="187" y="529" width="173" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="start-title" value="Готовность сервисов" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=17;fontStyle=1;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="365" y="552" width="580" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="start-mc" value="Trino запускается после проверки приватного бакета через mc." style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="365" y="584" width="560" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="start-bi" value="Superset запускается, когда Trino готов принимать запросы." style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="365" y="610" width="560" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-panel" value="" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.4;fillColor=#FFFFFF;strokeColor=#D4DEE8;" vertex="1" parent="1">
+          <mxGeometry x="34" y="711" width="1412" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="Легенда" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=17;fontStyle=1;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="55" y="726" width="97" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="swatch-platform" value="" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.4;fillColor=#E8EFFA;strokeColor=#5777A6;" vertex="1" parent="1">
+          <mxGeometry x="155" y="734" width="22" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-platform" value="SQL и каталог" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="186" y="726" width="152" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="swatch-storage" value="" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.4;fillColor=#FFF2DB;strokeColor=#B4863E;" vertex="1" parent="1">
+          <mxGeometry x="343" y="734" width="22" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-storage" value="S3 и mc" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="374" y="726" width="152" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="swatch-bi" value="" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.4;fillColor=#F3EDFA;strokeColor=#8A69A6;" vertex="1" parent="1">
+          <mxGeometry x="486" y="734" width="22" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-bi" value="BI" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="517" y="726" width="152" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="swatch-volume" value="" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;strokeWidth=1.4;fillColor=#E5F5EF;strokeColor=#4B8C76;" vertex="1" parent="1">
+          <mxGeometry x="580" y="734" width="22" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-volume" value="Том Docker" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="611" y="726" width="152" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-net" edge="1" parent="1" style="noEdgeStyle=1;rounded=0;strokeColor=#5A738D;strokeWidth=1.8;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="780" y="742" as="sourcePoint" />
+            <mxPoint x="831" y="742" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend-net-text" value="Сетевое обращение" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="844" y="726" width="182" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-mount" edge="1" parent="1" style="noEdgeStyle=1;rounded=0;strokeColor=#4B8C76;strokeWidth=1.8;dashed=1;dashPattern=4 3;endArrow=none;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1070" y="742" as="sourcePoint" />
+            <mxPoint x="1121" y="742" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend-mount-text" value="Монтирование тома" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="1136" y="726" width="241" height="32" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

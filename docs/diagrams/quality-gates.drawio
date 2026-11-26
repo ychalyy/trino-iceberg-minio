@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="quality-gates" name="Контроль качества Lakehouse">
+    <mxGraphModel page="1" pageScale="1" grid="1" pageWidth="1400" pageHeight="672" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Контроль качества Lakehouse" style="text;html=0;whiteSpace=wrap;verticalAlign=middle;spacing=0;fontFamily=Arial;align=left;fontSize=27;fontStyle=1;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="35" y="20" width="1330" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Проверки пакета сохраняются по run_id и управляют переходом к следующей фазе" style="text;html=0;whiteSpace=wrap;verticalAlign=middle;spacing=0;fontFamily=Arial;align=left;fontSize=15;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="35" y="66" width="1330" height="29" as="geometry" />
+        </mxCell>
+        <mxCell id="stage" value="&lt;b&gt;stage&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;Типизированный вход&lt;br&gt;TPC-H и контрольная дельта&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;fillColor=#E5F5EF;strokeColor=#4B8C76;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="35" y="145" width="238" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="input" value="&lt;b&gt;Входной DQ&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;5 правил · 33 результата&lt;br&gt;Ключи, объём, ссылки, скидка&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;fillColor=#F3EDFA;strokeColor=#8A69A6;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="304" y="145" width="238" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="write" value="&lt;b&gt;Запись слоёв&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;Raw → Vault → снимки mart&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;fillColor=#E5F5EF;strokeColor=#4B8C76;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="573" y="145" width="238" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="model" value="&lt;b&gt;Модельный DQ&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;5 правил · 59 результатов&lt;br&gt;Ключи, версии и сверка&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;fillColor=#F3EDFA;strokeColor=#8A69A6;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="842" y="145" width="238" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="publish" value="&lt;b&gt;Пакет COMPLETE&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;Обе витрины читают&lt;br&gt;последний завершённый пакет&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;fillColor=#E8EFFA;strokeColor=#5777A6;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="1111" y="145" width="238" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="stage-input" style="noEdgeStyle=1;strokeWidth=1.7;endArrow=block;endFill=1;endSize=7;strokeColor=#607991;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="stage" target="input">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="input-write" style="noEdgeStyle=1;strokeWidth=1.7;endArrow=block;endFill=1;endSize=7;strokeColor=#607991;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="input" target="write">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="write-model" style="noEdgeStyle=1;strokeWidth=1.7;endArrow=block;endFill=1;endSize=7;strokeColor=#607991;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="write" target="model">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="model-publish" style="noEdgeStyle=1;strokeWidth=1.7;endArrow=block;endFill=1;endSize=7;strokeColor=#607991;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="model" target="publish">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="no-raw" value="&lt;b&gt;Входной FAIL&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;До записи в Raw&lt;br&gt;Invalid: скидка 1,25&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;fillColor=#FBEDEB;strokeColor=#AD635B;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="304" y="320" width="238" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="input-no-raw" style="noEdgeStyle=1;strokeWidth=1.7;endArrow=block;endFill=1;endSize=7;strokeColor=#AD635B;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=4 3;" edge="1" parent="1" source="input" target="no-raw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="no-pub" value="&lt;b&gt;Модельный FAIL&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;Пакет остаётся PENDING&lt;br&gt;Бизнес-данные прежнего пакета&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;fillColor=#FBEDEB;strokeColor=#AD635B;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="842" y="320" width="238" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="model-no-pub" style="noEdgeStyle=1;strokeWidth=1.7;endArrow=block;endFill=1;endSize=7;strokeColor=#AD635B;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=4 3;" edge="1" parent="1" source="model" target="no-pub">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="evidence-strip" value="" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;fillColor=#F8FAFC;strokeColor=#D4DEE8;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="35" y="444" width="1330" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="evidence-heading" value="Результаты обеих фаз, включая FAIL" style="text;html=0;whiteSpace=wrap;verticalAlign=middle;spacing=0;fontFamily=Arial;align=left;fontSize=16;fontStyle=1;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="54" y="448" width="930" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="facts" value="&lt;b&gt;ops.dq_results&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;Пакет, попытка, правило, объект, факт и статус&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;fillColor=#F3EDFA;strokeColor=#8A69A6;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="56" y="480" width="530" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="bi" value="&lt;b&gt;Superset&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;Вкладка «Качество данных»&lt;/span&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;fillColor=#E8EFFA;strokeColor=#5777A6;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="690" y="480" width="315" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="facts-bi" style="noEdgeStyle=1;strokeWidth=1.7;endArrow=block;endFill=1;endSize=7;strokeColor=#607991;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="facts" target="bi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;fillColor=#FFFFFF;strokeColor=#D4DEE8;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="35" y="577" width="1330" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="Легенда" style="text;html=0;whiteSpace=wrap;verticalAlign=middle;spacing=0;fontFamily=Arial;align=left;fontSize=17;fontStyle=1;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="53" y="591" width="120" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-swatch-0" value="" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;fillColor=#F3EDFA;strokeColor=#8A69A6;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="186" y="600" width="21" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-label-0" value="Проверки и факты" style="text;html=0;whiteSpace=wrap;verticalAlign=middle;spacing=0;fontFamily=Arial;align=left;fontSize=15;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="216" y="592" width="285" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-swatch-1" value="" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;fillColor=#E5F5EF;strokeColor=#4B8C76;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="455" y="600" width="21" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-label-1" value="Данные пакета" style="text;html=0;whiteSpace=wrap;verticalAlign=middle;spacing=0;fontFamily=Arial;align=left;fontSize=15;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="485" y="592" width="285" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-swatch-2" value="" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;fillColor=#E8EFFA;strokeColor=#5777A6;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="725" y="600" width="21" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-label-2" value="Публикация и BI" style="text;html=0;whiteSpace=wrap;verticalAlign=middle;spacing=0;fontFamily=Arial;align=left;fontSize=15;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="755" y="592" width="285" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-swatch-3" value="" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontColor=#19304D;fontSize=18;fillColor=#FBEDEB;strokeColor=#AD635B;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="1002" y="600" width="21" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-label-3" value="Блокирующий FAIL · пунктир" style="text;html=0;whiteSpace=wrap;verticalAlign=middle;spacing=0;fontFamily=Arial;align=left;fontSize=15;fontStyle=0;fontColor=#19304D;" vertex="1" parent="1">
+          <mxGeometry x="1032" y="592" width="285" height="28" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
