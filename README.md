@@ -31,13 +31,13 @@
 
 ## Свидетельства испытаний
 
-Сохранённый прогон и контрольные выгрузки доступны в ревизии приёмки. Скриншоты показывают дашборд на момент этого прогона.
+Сохранённый прогон, контрольные выгрузки и скриншот вкладки качества доступны в ревизии приёмки. Скриншот бизнес-вкладки показывает текущий дашборд.
 
 - [Протокол сквозной приёмки](https://github.com/ychalyy/trino-iceberg-minio/blob/b54621d5e5dd7844302a62232cae438bad39d5a5/docs/acceptance-results.md)
 - [Контрольные значения чистого прогона](https://github.com/ychalyy/trino-iceberg-minio/blob/b54621d5e5dd7844302a62232cae438bad39d5a5/docs/evidence/release-control-values.tsv)
 - [Выгрузка DQ](https://github.com/ychalyy/trino-iceberg-minio/blob/b54621d5e5dd7844302a62232cae438bad39d5a5/docs/evidence/dq-results.tsv)
 - [Контрольные значения отгрузок](https://github.com/ychalyy/trino-iceberg-minio/blob/b54621d5e5dd7844302a62232cae438bad39d5a5/docs/evidence/shipping-by-mode.tsv)
 - [Скриншот вкладки качества](https://github.com/ychalyy/trino-iceberg-minio/blob/b54621d5e5dd7844302a62232cae438bad39d5a5/docs/superset-dq.png)
-- [Скриншот бизнес-вкладки](https://github.com/ychalyy/trino-iceberg-minio/blob/b54621d5e5dd7844302a62232cae438bad39d5a5/docs/superset-business.png)
+- [Актуальный скриншот бизнес-вкладки](docs/superset-business.png)
 
 Исходный стенд — [maxalyapyshev/trino-iceberg-minio](https://github.com/maxalyapyshev/trino-iceberg-minio), базовый коммит `ef567cbd53b902fe6fe8064dc835226c4c6b15be`.
